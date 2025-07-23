@@ -5,9 +5,6 @@ function crearProducto() {
     const editId = form.getAttribute('data-edit-id');
 
 
-        
-    console.log('📝 creando/actualizando producto');
-    console.log('➡️ editId:', editId);
     const data = {
         nombre: document.querySelector('[name="nombre"]').value,
         descripcion: document.querySelector('[name="descripcion"]').value,
@@ -18,9 +15,7 @@ function crearProducto() {
 
     if (editId){   data.id = editId;
 
-         console.log('✏️ Modo edición, enviando ID:', data.id);
     } else {
-        console.log('🆕 Modo creación');
     }
     const method = editId ? 'PUT' : 'POST';
 
@@ -111,7 +106,6 @@ function EditarProducto(id) {
     fetch(`${API_URL}?id=${id}`)
         .then(res => res.json())
         .then(data => {
-            console.log("📝 EditarProducto - respuesta:", data);
 
             const producto = data.registros?.[0] || data;
 
@@ -126,12 +120,12 @@ function EditarProducto(id) {
 
                 document.querySelector('.form-button').textContent = 'Actualizar Producto';
 
-                console.log("✏️ Editando producto ID:", producto.id);
+              
             } else {
-                alert('⚠️ Producto no encontrado');
+                alert('Producto no encontrado');
             }
         })
-        .catch(err => console.error('❌ Error al editar producto:', err));
+        .catch(err => console.error(' Error al editar producto:', err));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
