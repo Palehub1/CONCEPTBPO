@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Productos Financieros</title>
+    <link rel="stylesheet" href="../CSS/styles.css" />
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Agregar Productos </h1>
+        <h1>Financieros</h1>
+        <form id="form-producto">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label><br>
+                    <input type="text" name="nombre" required />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="rentabilidad">Rentabilidad</label><br>
+                    <input type="number" step="any" name="rentabilidad" required />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label><br>
+                    <textarea name="descripcion" placeholder="Describe el producto" required></textarea>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="riesgo">Riesgo</label><br>
+                    <input type="text" name="riesgo" required />
+                </div>
+                <br>
+                <div class="form-group full-width">
+                    <button type="submit" class="form-button">Crear Producto</button>
+                </div>
+        </form>
+    </div>
+    <h1 style="text-align: center;">Listado de productos</h1> <!-- Fuera del thead -->
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Rentabilidad</th>
+                <th>Riesgo</th>
+            </tr>
+        </thead>
+        <tbody id="productos-body">
+            <!-- Aquí se insertan los productos -->
+        </tbody>
+    </table>
+
+    <script src="../JS/acciones.js"></script>
+
+</body>
+
+</html>
